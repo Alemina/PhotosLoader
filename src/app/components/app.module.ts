@@ -7,12 +7,17 @@ import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { TableModule } from 'primeng/table';
 import { DialogModule } from 'primeng/dialog';
+import { FileUploadModule } from 'primeng/fileupload';
 
 import { AppComponent } from './app.component';
+import { PopupWindowComponent } from './popup-window/popup-window.component';
+import { ImageFieldComponent } from './popup-window/image-field/image-field.component';
 
 @NgModule({
     declarations: [
-        AppComponent
+        AppComponent,
+        PopupWindowComponent,
+        ImageFieldComponent
     ],
     imports: [
         BrowserModule,
@@ -22,7 +27,8 @@ import { AppComponent } from './app.component';
         HttpClientModule,
         InputTextModule,
         DialogModule,
-        ButtonModule
+        ButtonModule,
+        FileUploadModule
     ],
     providers: [],
     bootstrap: [AppComponent]
