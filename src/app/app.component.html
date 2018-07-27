@@ -1,26 +1,6 @@
-<p-dialog [(visible)]="display" [modal]="true" [responsive]="true" [width]="350" [minWidth]="200" [minY]="70" 
-        [maximizable]="true" [baseZIndex]="10000">
-    <p-table>
-      <ng-template pTemplate="header">
-          <tr>
-              <th>Vin</th>
-              <th>Year</th>
-              <th>Brand</th>
-              <th>Color</th>
-          </tr>
-      </ng-template>
-      <ng-template pTemplate="body">
-          <tr>
-              <td>asd1gsgdg</td>
-              <td>asd2</td>
-              <td>asd3</td>
-              <td>asd4</td>
-          </tr>
-      </ng-template>
-  </p-table>
-  <p-footer>
-    <button type="button" pButton icon="pi pi-close" (click)="display=false" label="Close" class="ui-button-secondary"></button>
-  </p-footer>
-</p-dialog>
+<app-popup-window
+  *ngIf="popupVisibility"
+  (popupClosed)="onPopupClosed()"
+></app-popup-window>
 
-<button type="button" (click)="showDialog()" pButton icon="pi pi-info-circle" label="Show"></button>
+<button type="button" (click)="showPopup()" pButton icon="pi pi-info-circle" label="Show"></button>

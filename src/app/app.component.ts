@@ -6,9 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  display: boolean = false;
 
-  showDialog() {
-      this.display = true;
+  popupVisibility = false;
+
+  showPopup() {
+    this.popupVisibility = true;
+  }
+  onPopupClosed() {
+    this.popupVisibility = false;
   }
 }

@@ -9,10 +9,12 @@ import { TableModule } from 'primeng/table';
 import { DialogModule } from 'primeng/dialog';
 
 import { AppComponent } from './app.component';
+import { PopupWindowComponent } from './popup-window/popup-window.component';
 
 @NgModule({
     declarations: [
-        AppComponent
+        AppComponent,
+        PopupWindowComponent
     ],
     imports: [
         BrowserModule,
