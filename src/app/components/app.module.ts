@@ -12,12 +12,14 @@ import { FileUploadModule } from 'primeng/fileupload';
 import { AppComponent } from './app.component';
 import { PopupWindowComponent } from './popup-window/popup-window.component';
 import { ImageFieldComponent } from './popup-window/image-field/image-field.component';
+import { TableComponent } from './popup-window/table/table.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         PopupWindowComponent,
-        ImageFieldComponent
+        ImageFieldComponent,
+        TableComponent
     ],
     imports: [
         BrowserModule,
