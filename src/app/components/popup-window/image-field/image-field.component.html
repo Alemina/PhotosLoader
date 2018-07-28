@@ -1,14 +1,9 @@
 <p-fileUpload
-        name="myfile[]"
         customUpload="true" (uploadHandler)="myUploader($event)"
         accept="image/*"
         maxFileSize="1000000"
       >
-    <!-- <ng-template pTemplate="content">
-        <ul *ngIf="uploadedFiles.length">
-            <li *ngFor="let file of uploadedFiles">{{file.name}} - {{file.size}} bytes</li>
-        </ul>
-    </ng-template> -->
+
 </p-fileUpload>
 <p>here: {{msgs}}</p>
 <p>here2: {{uploadedFiles}}</p>

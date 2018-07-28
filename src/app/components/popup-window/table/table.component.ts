@@ -18,4 +18,7 @@ export class TableComponent implements OnInit {
       { image: 'Song', description: '17%'}
     ];
   }
+  myUploader(event){
+    console.log('myUploader ', event)
+  }
 }

@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+/* .my-fileUpload{
+    display: none !important;
+} */
+.my-fileUpload > .ui-fileupload-buttonbar{
+    display: none !important;
+}
+.my-fileUpload > .ui-fileupload-content{
+    padding: 0 !important;
+}
+.my-fileUpload > .ui-fileupload-content > .ui-fileupload-files{
+    display: none !important;
+}
