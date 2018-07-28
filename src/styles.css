@@ -11,3 +11,7 @@
 .my-fileUpload > .ui-fileupload-content > .ui-fileupload-files{
     display: none !important;
 }
+img{
+    max-width: 70px;
+    max-height: 70px;
+}

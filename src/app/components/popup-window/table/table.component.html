@@ -16,7 +16,7 @@
       </ng-template>
       <ng-template pTemplate="body" let-el>
         <tr [pSelectableRow]="el">
-          <td>{{el.image}}</td>
+          <td><img [src]="el.image"></td>
           <td>{{el.description}}</td>
         </tr>
       </ng-template>

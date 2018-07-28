@@ -27,6 +27,7 @@ export class ImageFieldComponent implements OnInit {
           console.log('asd ', file);
           this.uploadedFiles.push(file);
           this.url = file.objectURL;
+          console.log('objecturl: ', this.url);
           this.isDone = true;
       }
       this.msgs = [];
