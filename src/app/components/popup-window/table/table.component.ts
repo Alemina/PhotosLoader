@@ -21,4 +21,10 @@ export class TableComponent implements OnInit {
   myUploader(event){
     console.log('myUploader ', event)
   }
+  myAdd(){
+    console.log('add')
+  }
+  onRowSelect(event){
+    console.log('onRowSelect ', event)
+  }
 }

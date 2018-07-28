@@ -4,7 +4,10 @@
   auto="true"
 >
   <ng-template pTemplate="content">
-    <p-table [value]="table">
+    <p-table 
+      [value]="table" 
+      selectionMode="single" (onRowSelect)="onRowSelect($event)"
+      [paginator]="true" [rows]="3">
       <ng-template pTemplate="header">
         <tr>
           <th>Image</th>
@@ -12,19 +15,15 @@
         </tr>
       </ng-template>
       <ng-template pTemplate="body" let-el>
-        <tr>
+        <tr [pSelectableRow]="el">
           <td>{{el.image}}</td>
-          <td pEditableColumn>
-            <p-cellEditor>
-              <ng-template pTemplate="input">
-                <input type="text" [(ngModel)]="el.description">
-              </ng-template>
-              <ng-template pTemplate="output">
-                {{el.description}}
-              </ng-template>
-            </p-cellEditor>
-          </td>
+          <td>{{el.description}}</td>
         </tr>
+      </ng-template>
+      <ng-template pTemplate="summary">
+          <div style="text-align:left">
+              <button type="button" pButton icon="fa fa-plus" (click)="myAdd()" label="Add"></button>
+          </div>
       </ng-template>
     </p-table>
   </ng-template>
