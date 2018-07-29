@@ -23,13 +23,9 @@ export class TableComponent implements OnInit {
       { field: 'description', header: 'Description' }
     ];
   }
-  myUploader(event){
-    console.log('myUploader ', event)
-    console.log('myUploader ', event.files)
-    console.log('myUploader ', event.files[0].objectURL.changingThisBreaksApplicationSecurity)
-    // this.table.push({image: event.files[0].objectURL.changingThisBreaksApplicationSecurity})
-    this.table.push({ image: '/assets/images/example_image_3.png', description: '38%'})
-    console.log(this.table);
+  myUploader(event, form){
+    this.table.push({image: event.files[0].objectURL})
+    form && form.clear();
   }
   myAdd(){
     console.log('add')

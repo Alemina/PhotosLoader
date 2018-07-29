@@ -6,35 +6,58 @@
 >
   <ng-template pTemplate="content">
     <p-table #dt
-      [value]="table" [columns]="cols"
-      selectionMode="single" (onRowSelect)="onRowSelect($event)"
-      [paginator]="true" [rows]="3" [totalRecords]="table.length"> 
+      [value]="table" 
+      [columns]="cols"
+      selectionMode="single" 
+      (onRowSelect)="onRowSelect($event)"
+      [paginator]="true" 
+      [rows]="3" 
+      [totalRecords]="table.length"
+    > 
       <ng-template pTemplate="caption">
-          <div>        
-              <i class="fa fa-search"></i>
-              <input type="text" pInputText size="50" 
-                placeholder="Search by image name or description" 
-                (input)="dt.filterGlobal($event.target.value, 'contains')">
-          </div>
+        <div>        
+          <i class="fa fa-search"></i>
+          <input 
+            type="text" 
+            pInputText size="50" 
+            placeholder="Search by image name or description" 
+            (input)="dt.filterGlobal($event.target.value, 'contains')"
+          >
+        </div>
       </ng-template>
       <ng-template pTemplate="header" let-columns>
         <tr>
-          <th *ngFor="let col of columns" [pSortableColumn]="col.field">
+          <th 
+            *ngFor="let col of columns" 
+            [pSortableColumn]="col.field"
+          >
             {{col.header}}
             <p-sortIcon [field]="col.field"></p-sortIcon>
           </th>
         </tr>
       </ng-template>
-      <ng-template pTemplate="body" let-el>
+      <ng-template 
+        pTemplate="body" 
+        let-el
+      >
         <tr [pSelectableRow]="el">
-          <td><img [src]="el.image"></td>
+          <td>
+            <img [src]="el.image">
+          </td>
           <td>{{el.description}}</td>
         </tr>
       </ng-template>
       <ng-template pTemplate="summary">
-          <div style="text-align:left">
-              <button type="button" pButton icon="fa fa-plus" (click)="myAdd()" label="Add"></button>
-          </div>
+        <div style="text-align:left">
+          <p-fileUpload #form
+            mode="basic" 
+            accept="image/*" 
+            maxFileSize="1000000"
+            customUpload="true" 
+            (uploadHandler)="myUploader($event, form)"
+            auto="true"
+          ></p-fileUpload>
+        </div>
       </ng-template>
     </p-table>
   </ng-template>
