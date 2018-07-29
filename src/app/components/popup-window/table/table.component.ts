@@ -16,9 +16,9 @@ export class TableComponent implements OnInit {
 
   ngOnInit() {
     this.table = [
-      { image: '/assets/images/example_image_1.png', description: '51%'},
-      { image: '/assets/images/example_image_2.png', description: '83%'},
-      { image: '/assets/images/example_image_3.png', description: '38%'}
+      { image: '/assets/images/example_image_1.png', description: 'face1'},
+      { image: '/assets/images/example_image_2.png', description: 'face2'},
+      { image: '/assets/images/example_image_3.png', description: 'avatar'}
     ];
     this.cols = [
       { field: 'image', header: 'Image' },
@@ -52,6 +52,5 @@ export class TableComponent implements OnInit {
   }
   onDragStart(event, imagePath){
     this.redirect.emit(imagePath)
-    console.log('onDragStart ', event, imagePath);
   }
 }

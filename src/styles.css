@@ -24,7 +24,6 @@
 .my-imageField > .ui-fileupload-content > .ui-fileupload-files{
     display: none !important;
 }
-
 .delete-btn{
     float: right;
     font-weight: 700;

@@ -3,6 +3,8 @@
   customUpload="true" 
   (uploadHandler)="onAddRow($event)"
   auto="true"
+  accept="image/*"
+  maxFileSize="1000000"
 >
   <ng-template pTemplate="content">
     <p-table #dt
