@@ -1,17 +1,28 @@
 <p-fileUpload 
   styleClass="my-fileUpload" 
-  (onUpload)="myUploader($event)"
+  customUpload="true" 
+  (uploadHandler)="myUploader($event)"
   auto="true"
 >
   <ng-template pTemplate="content">
-    <p-table 
-      [value]="table" 
+    <p-table #dt
+      [value]="table" [columns]="cols"
       selectionMode="single" (onRowSelect)="onRowSelect($event)"
-      [paginator]="true" [rows]="3">
-      <ng-template pTemplate="header">
+      [paginator]="true" [rows]="3" [totalRecords]="table.length"> 
+      <ng-template pTemplate="caption">
+          <div>        
+              <i class="fa fa-search"></i>
+              <input type="text" pInputText size="50" 
+                placeholder="Search by image name or description" 
+                (input)="dt.filterGlobal($event.target.value, 'contains')">
+          </div>
+      </ng-template>
+      <ng-template pTemplate="header" let-columns>
         <tr>
-          <th>Image</th>
-          <th>Description</th>
+          <th *ngFor="let col of columns" [pSortableColumn]="col.field">
+            {{col.header}}
+            <p-sortIcon [field]="col.field"></p-sortIcon>
+          </th>
         </tr>
       </ng-template>
       <ng-template pTemplate="body" let-el>

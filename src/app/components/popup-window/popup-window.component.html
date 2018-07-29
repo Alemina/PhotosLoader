@@ -1,9 +1,7 @@
 <p-dialog (onHide)="closePopup()" [visible]="true" [modal]="true" [width]="600" [minWidth]="200" [minY]="70"
         [maximizable]="true" [baseZIndex]="10000">
   <app-table></app-table>
-  <hr/>
   <app-image-field></app-image-field>
-  <hr/>
   <p-footer>
     <button type="button" pButton icon="pi pi-close" (click)="closePopup()" label="Close" class="ui-button-secondary"></button>
   </p-footer>
