@@ -13,15 +13,13 @@ import { AppComponent } from './app.component';
 import { PopupWindowComponent } from './popup-window/popup-window.component';
 import { ImageFieldComponent } from './popup-window/image-field/image-field.component';
 import { TableComponent } from './popup-window/table/table.component';
-import { RowEditDialogComponent } from './popup-window/table/row-edit-dialog/row-edit-dialog.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         PopupWindowComponent,
         ImageFieldComponent,
-        TableComponent,
-        RowEditDialogComponent
+        TableComponent
     ],
     imports: [
         BrowserModule,

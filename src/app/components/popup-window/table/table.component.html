@@ -9,7 +9,8 @@
       [value]="table" 
       [columns]="cols"
       selectionMode="single" 
-      (onRowSelect)="onRowSelect($event)"
+      (onRowSelect)="onRowSelect($event, $index)"
+      (onRowUnselect)="onRowUnselect($event)"
       [paginator]="true" 
       [rows]="3" 
       [totalRecords]="table.length"
@@ -44,19 +45,48 @@
           <td>
             <img [src]="el.image">
           </td>
-          <td>{{el.description}}</td>
+          <td pEditableColumn>
+            <p-cellEditor>
+              <ng-template pTemplate="input">
+                <input type="text" [(ngModel)]="el.description">
+              </ng-template>
+              <ng-template pTemplate="output">
+                {{el.description}}
+              </ng-template>
+            </p-cellEditor>
+          </td>
         </tr>
       </ng-template>
       <ng-template pTemplate="summary">
         <div style="text-align:left">
-          <p-fileUpload #form
+          <p-fileUpload #addImageForm
+            *ngIf="!editMode; else edit"
             mode="basic" 
             accept="image/*" 
             maxFileSize="1000000"
             customUpload="true" 
-            (uploadHandler)="myUploader($event, form)"
+            (uploadHandler)="onAddRow($event, addImageForm)"
             auto="true"
+            chooseLabel="Add"
           ></p-fileUpload>
+          <ng-template #edit>
+            <p-fileUpload #editImageForm
+              mode="basic" 
+              accept="image/*" 
+              maxFileSize="1000000"
+              customUpload="true" 
+              (uploadHandler)="onEditRow($event, editImageForm)"
+              auto="true"
+              chooseLabel="Change image"
+            ></p-fileUpload>
+            <button pButton
+              type="button" 
+              class="ui-button-danger delete-btn" 
+              (click)="onRowDelete()" 
+              label="Delete"
+            ></button>
+            <div style="clear:both"></div>
+          </ng-template>
         </div>
       </ng-template>
     </p-table>
