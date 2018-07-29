@@ -1,12 +1,7 @@
-<p-fileUpload
-        customUpload="true" (uploadHandler)="myUploader($event)"
-        accept="image/*"
-        maxFileSize="1000000"
-      >
-
-</p-fileUpload>
-<p>here: {{msgs}}</p>
-<p>here2: {{uploadedFiles}}</p>
-<p>isDone: {{isDone}}</p>
-<p *ngIf="isDone">here3: {{uploadedFiles}}</p>
-<img [src]="url" *ngIf="isDone"/>
+<div>
+  <p-fileUpload
+    customUpload="true" (uploadHandler)="myUploader($event)"
+    accept="image/*"
+    maxFileSize="1000000"
+  ></p-fileUpload>
+</div>

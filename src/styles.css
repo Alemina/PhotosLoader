@@ -19,3 +19,7 @@ img{
     float: right;
     font-weight: 700;
 }
+.my-dialog{
+    top: 10px !important;
+    position:absolute;
+}

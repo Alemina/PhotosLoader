@@ -8,6 +8,7 @@ import { ButtonModule } from 'primeng/button';
 import { TableModule } from 'primeng/table';
 import { DialogModule } from 'primeng/dialog';
 import { FileUploadModule } from 'primeng/fileupload';
+import { DragDropModule } from 'primeng/dragdrop';
 
 import { AppComponent } from './app.component';
 import { PopupWindowComponent } from './popup-window/popup-window.component';
@@ -30,7 +31,8 @@ import { TableComponent } from './popup-window/table/table.component';
         InputTextModule,
         DialogModule,
         ButtonModule,
-        FileUploadModule
+        FileUploadModule,
+        DragDropModule
     ],
     providers: [],
     bootstrap: [AppComponent]

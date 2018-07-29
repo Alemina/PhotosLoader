@@ -1,5 +1,14 @@
-<p-dialog (onHide)="closePopup()" [visible]="true" [modal]="true" [width]="600" [minWidth]="200" [minY]="70"
-        [maximizable]="true" [baseZIndex]="10000">
+<p-dialog 
+  (onHide)="closePopup()" 
+  [visible]="true" 
+  [modal]="true" 
+  [width]="600" 
+  [minWidth]="200" 
+  [minY]="70"
+  [maximizable]="true" 
+  [baseZIndex]="10000"
+  styleClass="my-dialog"
+  >
   <app-table></app-table>
   <app-image-field></app-image-field>
   <p-footer>

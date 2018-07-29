@@ -12,27 +12,9 @@ export class ImageFieldComponent implements OnInit {
 
   uploadedFiles: any[] = [];
 
-  url: any;
-  isDone: boolean;
-
-  test: string;
-
   ngOnInit(){
-    this.isDone = false;
+
   }
 
-  myUploader(event) {
-      console.log('here');
-      for (const file of event.files) {
-          console.log('asd ', file);
-          this.uploadedFiles.push(file);
-          this.url = file.objectURL;
-          console.log('objecturl: ', this.url);
-          this.isDone = true;
-      }
-      this.msgs = [];
-      this.msgs.push({severity: 'info', summary: 'File Uploaded', detail: ''});
-      this.test = `${this.test} asd `;
-  }
 
 }

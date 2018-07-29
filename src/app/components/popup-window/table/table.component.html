@@ -1,7 +1,7 @@
 <p-fileUpload 
   styleClass="my-fileUpload" 
   customUpload="true" 
-  (uploadHandler)="myUploader($event)"
+  (uploadHandler)="onAddRow($event)"
   auto="true"
 >
   <ng-template pTemplate="content">
@@ -41,7 +41,7 @@
         pTemplate="body" 
         let-el
       >
-        <tr [pSelectableRow]="el">
+        <tr [pSelectableRow]="el" pDraggable="dd">
           <td>
             <img [src]="el.image">
           </td>

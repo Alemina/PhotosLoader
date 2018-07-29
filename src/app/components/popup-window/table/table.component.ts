@@ -13,7 +13,6 @@ export class TableComponent implements OnInit {
   editMode: boolean;
   selectedRow: number;
 
-
   ngOnInit() {
     this.table = [
       { image: '/assets/images/example_image_1.png', description: '51%'},
@@ -25,6 +24,7 @@ export class TableComponent implements OnInit {
       { field: 'description', header: 'Description' }
     ];
     this.editMode = false;
+    this.selectedRow = -1;
   }
   onAddRow(event, form){
     this.table.push({image: event.files[0].objectURL})
