@@ -9,9 +9,16 @@
   [baseZIndex]="10000"
   styleClass="my-dialog"
   >
-  <app-table></app-table>
-  <app-image-field></app-image-field>
+  <app-table (redirect)="redirectImagePath=$event"></app-table>
+  <app-image-field [draggedImagePath]="redirectImagePath"></app-image-field>
   <p-footer>
-    <button type="button" pButton icon="pi pi-close" (click)="closePopup()" label="Close" class="ui-button-secondary"></button>
+    <button 
+      type="button" 
+      pButton 
+      icon="pi pi-close" 
+      (click)="closePopup()" 
+      label="Close" 
+      class="ui-button-secondary">
+    </button>
   </p-footer>
 </p-dialog>

@@ -41,8 +41,11 @@
         pTemplate="body" 
         let-el
       >
-        <tr [pSelectableRow]="el" pDraggable="dd">
-          <td>
+        <tr [pSelectableRow]="el" >
+          <td 
+            pDraggable="pnl"
+            (onDragStart)="onDragStart($event, el.image)"
+          >
             <img [src]="el.image">
           </td>
           <td pEditableColumn>
@@ -61,7 +64,7 @@
         <div style="text-align:left">
           <p-fileUpload #addImageForm
             *ngIf="!editMode; else edit"
-            mode="basic" 
+            mode="basic"
             accept="image/*" 
             maxFileSize="1000000"
             customUpload="true" 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 
 @Component({
@@ -12,6 +12,7 @@ export class TableComponent implements OnInit {
   cols: any[];
   editMode: boolean;
   selectedRow: number;
+  @Output() redirect = new EventEmitter<string>();
 
   ngOnInit() {
     this.table = [
@@ -48,5 +49,9 @@ export class TableComponent implements OnInit {
     if(this.selectedRow <= -1) return;
     this.table.splice(this.selectedRow, 1)
     this.editMode = false;
+  }
+  onDragStart(event, imagePath){
+    this.redirect.emit(imagePath)
+    console.log('onDragStart ', event, imagePath);
   }
 }

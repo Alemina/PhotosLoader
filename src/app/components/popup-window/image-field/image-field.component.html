@@ -1,7 +1,20 @@
 <div>
-  <p-fileUpload
-    customUpload="true" (uploadHandler)="myUploader($event)"
+  <p-fileUpload #galleryForm
+    styleClass="my-imageField"
+    customUpload="true"
     accept="image/*"
     maxFileSize="1000000"
-  ></p-fileUpload>
+    showCancelButton="false"
+    showUploadButton="false"
+    (uploadHandler)="onDropFromDesktop($event, galleryForm)"
+    auto="true"
+  >
+    <ng-template pTemplate="content">
+        <img 
+          pDroppable="pnl"
+          [src]="this.uploadedImage"
+          (onDrop)="onDropFromClipboard($event)"
+        >
+    </ng-template>
+  </p-fileUpload>
 </div>

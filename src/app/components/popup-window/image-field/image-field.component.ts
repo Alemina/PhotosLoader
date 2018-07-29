@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { Message } from '../../../data/message.model';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-image-field',
@@ -8,13 +7,18 @@ import { Message } from '../../../data/message.model';
 })
 export class ImageFieldComponent implements OnInit {
 
-  msgs: Message[];
-
-  uploadedFiles: any[] = [];
+  uploadedImage: string;
+  @Input() draggedImagePath:string;
 
   ngOnInit(){
-
+    this.uploadedImage = '/assets/images/example_image_1.png';
   }
-
-
+  onDropFromDesktop(event, form){
+    console.log('onDropFromDesktop ', event);
+    this.uploadedImage = event.files[0].objectURL;
+    form && form.clear();
+  }
+  onDropFromClipboard(event){
+    this.uploadedImage = this.draggedImagePath;
+  }
 }

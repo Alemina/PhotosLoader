@@ -6,7 +6,9 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./popup-window.component.css']
 })
 export class PopupWindowComponent  {
+
   @Output() popupClosed = new EventEmitter();
+  redirectImagePath:string;
 
   closePopup() {
     this.popupClosed.emit();
