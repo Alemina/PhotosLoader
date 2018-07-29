@@ -23,8 +23,8 @@
           <input 
             type="text" 
             pInputText size="50" 
-            placeholder="Search by image name or description" 
-            (input)="dt.filterGlobal($event.target.value, 'contains')"
+            placeholder="Search by description" 
+            (input)="dt.filter($event.target.value, 'description', 'contains')"
           >
         </div>
       </ng-template>
